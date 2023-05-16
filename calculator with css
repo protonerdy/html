@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<style>
+			#main{width: 300px; height: 250px; background-color: #3c3c3c;}
+			input{width: 62px; height: 40px; font-size: 20px; margin:5px;}
+			#holder{width:96%; height: 42px; background-color: silver;}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<form name="f">
+				<input type="text" name="i" placeholder="0" id="holder"> <br>
+				<input type="button" value ="7" onclick="f.i.value+=7">
+				<input type="button" value ="8" onclick="f.i.value+=8">
+				<input type="button" value ="9" onclick="f.i.value+=9"> 
+				<input type="button" value ="/" onclick="div()">
+				<br>
+				<input type="button" value ="4" onclick="f.i.value+=4">
+				<input type="button" value ="5" onclick="f.i.value+=5">
+				<input type="button" value ="6" onclick="f.i.value+=6">
+				<input type="button" value ="x" onclick="mul()">
+				<br>
+				<input type="button" value ="1" onclick="f.i.value+=1">
+				<input type="button" value ="2" onclick="f.i.value+=2">
+				<input type="button" value ="3" onclick="f.i.value+=3">
+				<input type="button" value ="+" onclick="add()">
+				<br>
+				<input type="button" value ="C" onclick="f.i.value=''">
+				<input type="button" value ="0" onclick="f.i.value+=0">
+				<input type="button" value ="=" onclick="f.i.value = eval(f.i.value)">
+				<input type="button" value ="-" onclick="sub()">
+				<br>
+			</form>
+			
+		</div>
+		
+		<script> 
+			function add() {
+				var a=0, b=0;
+				a = f.i.value
+				b = a.charAt(a.length-1)
+				if (b == '+' || b == '-' || b == '/' || b =='*'){
+				f.i.value = a.substring(0,a.length-1);
+				f.i.value += '+';
+				}
+				else{
+					f.i.value += '+';
+			}
+			}
+			
+			function sub() {
+				var a=0, b=0;
+				a = f.i.value
+				b = a.charAt(a.length-1)
+				if (b == '+' || b == '-' || b == '/' || b =='*'){
+				f.i.value = a.substring(0,a.length-1);
+				f.i.value += '-';
+				}
+				else{
+					f.i.value += '-';
+			}
+			}
+			
+			function div() {
+				var a=0, b=0;
+				a = f.i.value
+				b = a.charAt(a.length-1)
+				if (b == '+' || b == '-' || b == '/' || b =='*'){
+				f.i.value = a.substring(0,a.length-1);
+				f.i.value += '/';
+				}
+				else{
+					f.i.value += '/';
+			}
+			}
+			
+			function mul() {
+				var a=0, b=0;
+				a = f.i.value
+				b = a.charAt(a.length-1)
+				if (b == '+' || b == '-' || b == '/' || b =='*'){
+				f.i.value = a.substring(0,a.length-1);
+				f.i.value += '*';
+				}
+				else{
+					f.i.value += '*';
+			}
+			}
+		</script>
+	</body>
+</html>
